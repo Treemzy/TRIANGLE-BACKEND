@@ -9,6 +9,8 @@ https://docs.djangoproject.com/en/4.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
+
+import dj_database_url
 import django_heroku
 from pathlib import Path
 import os
@@ -129,6 +131,7 @@ DATABASES = {
     }
 }
 
+DATABASES['default'] = dj_database_url.config(default='postgres://hsntzvbputebac:fcdf9efa3dc42129fc66b9b1acf9f5bcbbbcd8cafa38d28f9725856cd3df238f@ec2-44-209-24-62.compute-1.amazonaws.com:5432/d8f3s7q6ft7f8p', conn_max_age=600, ssl_require=True)
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
