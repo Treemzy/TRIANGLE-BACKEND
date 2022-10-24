@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-q-*2-82la&#k7dg3_zhtsn%t#mr$w#rmj3db6sjc+8x=nc4y^@
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['localhost', 'Treemzy001.pythonanywhere.com']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -88,13 +88,14 @@ SIMPLE_JWT = {
 MIDDLEWARE = [
     "corsheaders.middleware.CorsMiddleware",
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    "whitenoise.middleware.WhiteNoiseMiddleware",
+    
 ]
 
 ROOT_URLCONF = 'backend.urls'
@@ -172,7 +173,6 @@ STATICFILES_DIRS = [
 ]
 STATIC_FILE_ROOT = os.path.join(BASE_DIR, "static")
 MEDIA_ROOT = 'static/images'
-
 
 
 # Default primary key field type
